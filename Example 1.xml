@@ -1,0 +1,32 @@
+<AssignedAccessConfiguration xmlns="http://schemas.microsoft.com/AssignedAccess/2022/config">
+  <Profiles>
+    <Profile Id="MultiAppProfile">
+      <AllAppsList>
+        <!-- UWP App Example: Calculator -->
+        <AllowedApp AppUserModelId="Microsoft.WindowsCalculator_8wekyb3d8bbwe!App" />
+        
+        <!-- UWP App Example: Microsoft Edge -->
+        <AllowedApp AppUserModelId="Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge" />
+        
+        <!-- Win32 App Example: Notepad++ -->
+        <AllowedApp DesktopAppPath="C:\Program Files\Notepad++\notepad++.exe" />
+      </AllAppsList>
+      
+      <StartLayout>
+        <Group DisplayName="Kiosk Tools">
+          <Tile AppUserModelId="Microsoft.WindowsCalculator_8wekyb3d8bbwe!App" />
+          <Tile AppUserModelId="Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge" />
+          <Tile DesktopAppPath="C:\Program Files\Notepad++\notepad++.exe" />
+        </Group>
+      </StartLayout>
+    </Profile>
+  </Profiles>
+
+  <Configs>
+    <Config>
+      <!-- Replace 'kioskuser' with your local or AAD user -->
+      <Account>kioskuser</Account>
+      <DefaultProfile Id="MultiAppProfile" />
+    </Config>
+  </Configs>
+</AssignedAccessConfiguration>
